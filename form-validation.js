@@ -3,7 +3,7 @@ function validate(){
   var userEntered = document.getElementById("user").value;
   var passEntered = document.getElementById("pass").value;
 
-  if(userEntered.length >5)
+  if(userEntered.length >5 && (userEntered.indexOf(' ') < 0))
   {
   document.getElementById("usernameGroup").classList.add("has-success");
   }
@@ -17,7 +17,7 @@ function validate(){
   document.getElementById("usernameGroup").classList.add("has-error");
   }
 
-  if(passEntered == "password")
+  if(passEntered == "password" || passEntered == userEntered || passEntered.length <6 || passEntered.length >20)
   {
   //Show message that there is an error with the password...
   document.getElementById("passwordError").innerHTML="Bad password.";
